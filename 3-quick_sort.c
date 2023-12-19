@@ -1,7 +1,5 @@
 #include "sort.h"
 
-#include "sort.h"
-
 /**
  * swapi - Swap two integer.
  * @int1: The first integr
