@@ -1,4 +1,4 @@
-sorting algorithms & Big O <br>
-selection sort <br>
-
+Sorting algorithms & Big O <br>
+Selection sort <br>
+Insertion sort <br>
 Quick sort <br>
