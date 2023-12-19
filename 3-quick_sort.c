@@ -62,13 +62,13 @@ int Lomuto_partition_scheme(int *array, size_t size, int start, int end)
  */
 void recursion_sort(int *array, size_t size, int start, int end)
 {
-	int p;
+	int place;
 
 	if (end - start > 0)
 	{
-		p = Lomuto_partition_scheme(array, size, start, end);
-		recursion_sort(array, size, start, part - 1);
-		recursion_sort(array, size, part + 1, end);
+		place = Lomuto_partition_scheme(array, size, start, end);
+		recursion_sort(array, size, start, place - 1);
+		recursion_sort(array, size, place + 1, end);
 	}
 }
 
