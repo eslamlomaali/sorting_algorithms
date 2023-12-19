@@ -1,2 +1,2 @@
 sorting algorithms & Big O <br>
-selection sort
+selection sort <br>
