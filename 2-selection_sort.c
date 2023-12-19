@@ -1,4 +1,22 @@
 #include "sort.h"
+
+#include "sort.h"
+
+/**
+ * swapi - Swap two integer.
+ * @int1: The first integr
+ * @int2: The second integer
+ *
+ */
+void swapi(int *int1, int *int2)
+{
+	int temp;
+
+	temp = *int1;
+	*int1 = *int2;
+	*int2 = temp;
+}
+
 /**
  * selection_sort - Write a function that sorts an array of integers in
  * ascending order using the Selection sort algorithm
@@ -7,27 +25,22 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t z, idx;
-	int store, s, special = 0;
+	int *decrease;
+	size_t y, z;
 
-	if (array == NULL)
+	if (array == NULL || size < 2)
 		return;
-	for (z = 0; z < size; z++)
+
+	for (y = 0; y < size - 1; y++)
 	{
-		store = z;
-		special = 0;
-		for (idx = z + 1; idx < size; idx++)
+		decrease = array + y;
+		for (z = y + 1; z < size; z++)
+			decrease = (array[z] < *decrease) ? (array + z) : decrease;
+
+		if ((array + y) != decrease)
 		{
-			if (array[store] > array[idx])
-			{
-				store = idx;
-				special += 1;
-			}
-		}
-		s = array[z];
-		array[z] = array[store];
-		array[store] = s;
-		if (special != 0)
+			swapi(array + y, decrease);
 			print_array(array, size);
+		}
 	}
 }
